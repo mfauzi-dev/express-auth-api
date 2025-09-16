@@ -352,3 +352,46 @@ export const checkAuth = async (req, res) => {
         });
     }
 };
+
+export const refreshToken = async (req, res) => {
+    try {
+        const authHeader = req.headers["authorization"];
+        const token = authHeader && authHeader.split(" ")[1];
+
+        if (!token) {
+            return res.status(401).json({
+                success: false,
+                message: "Refresh token required",
+            });
+        }
+
+        const decoded = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
+
+        const user = await User.findByPk(decoded.id, {
+            include: ["role"],
+        });
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found",
+            });
+        }
+
+        // generate access token baru
+        const accessToken = generateAccessToken(user);
+        const refreshToken = generateRefreshToken(user);
+
+        return res.status(200).json({
+            success: true,
+            message: "Token refreshed",
+            accessToken,
+            refreshToken,
+        });
+    } catch (error) {
+        return res.status(401).json({
+            success: false,
+            message: "Invalid or expired refresh token",
+        });
+    }
+};

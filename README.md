@@ -1,4 +1,4 @@
-# Express Auth Starter
+# Express Auth Template dengan Refresh Token
 
 Starter project untuk membangun API menggunakan **Express.js** dengan fitur autentikasi lengkap, siap digunakan untuk project baru tanpa perlu membangun auth dari nol.
 
