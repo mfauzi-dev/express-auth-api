@@ -46,8 +46,14 @@ git clone https://github.com/mfauzi-dev/express-auth-template
     ```
 
 5. **Jalankan project**
+
     ```bash
     npm run dev
+    ```
+
+6. **Jalankan seeder role**
+    ```bash
+    node scripts/createRoles
     ```
 
 ## Teknologi
