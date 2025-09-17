@@ -5,7 +5,6 @@ Starter project untuk membangun API menggunakan **Express.js** dengan fitur aute
 ## Fitur Utama
 
 -   **Autentikasi JWT** (JSON Web Token)
--   **Cookie-based auth** untuk keamanan tambahan
 -   **Sequelize ORM** (MySQL)
 -   **Modular folder structure** (controller, route, middleware, utils)
 -   **Winston logger** untuk logging terstruktur
