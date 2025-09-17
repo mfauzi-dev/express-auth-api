@@ -46,7 +46,7 @@ async function createSuperAdmin() {
             email: createAdmin.email,
             password: hashedPassword,
             nomor_induk: createAdmin.nomor_induk,
-            roleAs: createAdmin.roleAs,
+            role_id: createAdmin.role_id,
             isVerified: createAdmin.isVerified,
             createdAt: new Date(),
             updatedAt: new Date(),

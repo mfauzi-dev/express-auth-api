@@ -24,7 +24,7 @@ git clone https://github.com/mfauzi-dev/express-auth-template
 1. **Rename folder sesuai project baru**
 
     ```bash
-    mv express-auth-starter my-new-project
+    mv express-auth-api my-new-project
     cd my-new-project
     ```
 
